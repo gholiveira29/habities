@@ -7,15 +7,13 @@ generator client {
 
 datasource db {
   provider = "sqlite"
-  url      = "file:./dev.db"
+  url      = env("DATABASE_URL")
 }
 
 model Habit {
-  id String @id @default(uuid())
-
-  title String
-
-  created_ar DateTime
+  id         String   @id @default(uuid())
+  titles     String
+  created_at DateTime
 
   @@map("habits")
 }
