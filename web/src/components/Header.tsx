@@ -2,6 +2,7 @@ import { useState } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
 import logoImage from '../assets/logo.svg';
 import { Plus, X } from 'phosphor-react';
+import NewHabitForm from './NewHabitForm';
 
 
 const Header = () => {
@@ -19,11 +20,12 @@ const Header = () => {
                 </Dialog.Trigger>
                 <Dialog.Portal>
                     <Dialog.Overlay className='w-screen h-screen bg-black/80 fixed inset-0' />
-                    <Dialog.Content className='absolute p-10 bg-zinc-900 rounded-2xl w-full max-w-md top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
+                    <Dialog.Content className='absolute p-10 bg-zinc-700 rounded-2xl w-full max-w-md top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
                         <Dialog.Close className='absolute right-4 top-4 text-zinc-400 hover:text-zinc-200'>
                             <X size={14} aria-label='Fechar' />
                         </Dialog.Close>
-                        conteudo modal
+                        <Dialog.Title className='text-3xl leading-tight font-extrabold'>Criar hábito</Dialog.Title>
+                        <NewHabitForm />
                     </Dialog.Content>
                 </Dialog.Portal>
             </Dialog.Root>
