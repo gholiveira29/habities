@@ -22,7 +22,7 @@ const New = () => {
     }
     const handleCreateNewHabit = async () => {
         if (!titles.trim() || weekDays.length === 0) {
-            Alert.alert('Novo Hábito', 'Informe o nome do hábito e escolha a recorrência');
+            return Alert.alert('Novo Hábito', 'Informe o nome do hábito e escolha a recorrência');
         } else {
             setLoading(true);
             await api.post('/habits', { titles, weekDays })
